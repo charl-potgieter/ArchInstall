@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# !!!!!!!!!!!!!!!!Ideally read this in from the keyboard
 HOSTNAME="ArchVirtTest"
 IPADDRESS="TBA"
 
