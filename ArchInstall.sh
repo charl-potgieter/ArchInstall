@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # !!!!!!!!!!!!!!!!Ideally read this in from the keyboard
-HOSTNAME="ArchVirtTest"
+read -p "Enter host name : " HOSTNAME
 IPADDRESS="TBA"
 
 
