@@ -1,7 +1,7 @@
 #!/bin/bash
 
-HOSTNAME = "ArchVirtTest"
-IPADDRESS = "TBA"
+HOSTNAME="ArchVirtTest"
+IPADDRESS="TBA"
 
 
 # Update clock and set time zones
