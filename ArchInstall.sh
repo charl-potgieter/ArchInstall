@@ -20,5 +20,5 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo $HOSTNAME > /etc/hostname
 
 echo "127.0.0.1             localhost" >  /etc/hosts
-echo  "::1                  localhost" >> /etc/hosts
-echo  $IPADDRESS "    " $HOSTNAME ".localdomain   " $HOSTNAME >> etc/hosts
+echo  "::1                   localhost" >> /etc/hosts
+echo  $IPADDRESS "    " $HOSTNAME ".localdomain   " $HOSTNAME >> /etc/hosts
