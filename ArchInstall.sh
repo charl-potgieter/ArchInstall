@@ -4,5 +4,5 @@
 timedatectl set-ntp true
 
 #Set Sydney time zone
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 hwclock --systohc
