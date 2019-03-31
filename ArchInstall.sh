@@ -2,7 +2,7 @@
 
 # Read hostname and ip address from keyboard
 read -p "Enter host name : " HOSTNAME
-read -p "Enter IP address : " IPADRESS
+read -p "Enter IP address : " IPADDRESS
 
 
 # Update clock and set time zones
