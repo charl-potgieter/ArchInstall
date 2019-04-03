@@ -1,8 +1,18 @@
 #!/bin/bash
 
+
+################################################################
+#
+# To Do
+# Maybe rethink the static IP address thing - try DHCPCD 
+# 
+################################################################
+
+
 # Read hostname and ip address from keyboard
 read -p "Enter host name : " HOSTNAME
-read -p "Enter IP address : " IPADDRESS
+# read -p "Enter IP address : " IPADDRESS
+read -p "Enter network interface e.g. enp0s3, eth0 : " INTERFACE
 
 
 # Update clock and set time zones
@@ -23,4 +33,7 @@ echo $HOSTNAME > /etc/hostname
 
 echo "127.0.0.1             localhost" >  /etc/hosts
 echo  "::1                   localhost" >> /etc/hosts
-echo  $IPADDRESS "    " $HOSTNAME".localdomain   " $HOSTNAME >> /etc/hosts
+echo  127.0.1.1 "    " $HOSTNAME".localdomain   " $HOSTNAME >> /etc/hosts
+
+
+ip link set $INTERFACE up
