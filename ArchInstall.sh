@@ -5,6 +5,7 @@
 #
 # To Do
 # Maybe rethink the static IP address thing - try DHCPCD 
+# Add a date&timestamp to the /etc/locale.gen backup file
 # 
 ################################################################
 
