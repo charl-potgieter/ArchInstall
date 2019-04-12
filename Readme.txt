@@ -65,17 +65,6 @@ https://wiki.archlinux.org/index.php/Systemd-resolved
 Where is /run/systemd/resolve/stub-resolv.conf?
 
 	
-Disk partitioning and formatting
---------------------------------
-Rather use  parted than fdisk (I am more familiar with parted)
-
-run parted with say parted /dev/sdX:
-(parted) mklabel msdos
-(parted) mkpart primary ext4 1MiB 100%
-(parted) set 1 boot on
-
-Format partition
-mkfs.ext4 /dev/sdX1
 
 
 Bootloader
@@ -105,7 +94,7 @@ Set network adaptor to "Bridged" to allow SSH access
 
 
 Hostname
---------
+--------gtsh
 See Arch Wiki network configuration.   May need to install samba and enable nmb.service to be able to ping / ssh based on hostname
 https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
 
