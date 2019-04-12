@@ -20,7 +20,21 @@ Setting up the VirtualBox Machine
  - Set network adaptor to bridged
  - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
  
-	
+
+Partiton the disks (manually)
+-----------------------------
+ - First boot ISO
+ - Identify block devices with fdisk -l
+ - run parted with say parted /dev/sdX:
+	mkquit(parted) mklabel msdos
+	(parted) mkpart primary ext4 1MiB 100%
+	(parted) set 1 boot on
+	(parted) quit
+
+ - Format partition
+	mkfs.ext4 /dev/sdX1
+
+
 	
 General
 -------
