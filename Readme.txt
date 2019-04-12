@@ -18,13 +18,12 @@ Setting up the VirtualBox Machine
 --------------------------------
  - Ensure 64 bit arch is selected
  - Set network adaptor to bridged
+ - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
  
 	
 	
 General
 -------
-
- - Booting in EFI mode seems more trouble than it is worth for the moment - stick with BIOS
  - Don't use underscore in hostname - have experienced issues with this
  
 
