@@ -20,9 +20,9 @@
 echo '-------------------------------------------------------'
 echo '	Network interfaces as below'
 echo '-------------------------------------------------------'
-echo '/n/n'
+echo '\n\n'
 ip addr show
-
+echo '\n\n'
 
 
 # Read hostname and ip address from keyboard
