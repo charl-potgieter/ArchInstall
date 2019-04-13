@@ -10,6 +10,21 @@
 ################################################################
 
 
+# Boot live iso and download this script using curl as below
+# curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
+# make executable with chmod 755 installscipt.sh
+# run ./installscript.sh
+
+
+# Display network interfaces
+echo '-------------------------------------------------------'
+echo '	Network interfaces as below'
+echo '-------------------------------------------------------'
+echo '/n/n'
+ip addr show
+
+
+
 # Read hostname and ip address from keyboard
 read -p "Enter host name : " HOSTNAME
 # read -p "Enter IP address : " IPADDRESS
