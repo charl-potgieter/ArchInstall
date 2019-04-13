@@ -16,6 +16,21 @@ read -p "Enter host name : " HOSTNAME
 read -p "Enter network interface e.g. enp0s3, eth0 : " INTERFACE
 
 
+	
+# Disk partitioning and formatting
+parted /dev/sda mklabel msdos
+parted /dev/sda mkpart primary ext4 1MiB 100%
+parted /dev/sda set 1 boot on
+mkfs.ext4 /dev/sdX1
+
+
+# GRUB Bootloader
+pacman -S grub
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
 # Update clock and set time zones
 timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
@@ -23,7 +38,7 @@ hwclock --systohc
 
 # Set localisation
 cp /etc/locale.gen /etc/locale.gen.backup.auto
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "en_AU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_AU.UTF-8" > /etc/locale.conf
