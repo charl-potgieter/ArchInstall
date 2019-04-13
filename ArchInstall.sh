@@ -73,7 +73,7 @@ echo  127.0.1.1 "    " $HOSTNAME".localdomain   " $HOSTNAME >> /etc/hosts
 
 
 ip link set $INTERFACE up
-
+systemctl enable dhcpcd@$INTERFACE.service
 
 # GRUB Bootloader
 pacman -S grub
