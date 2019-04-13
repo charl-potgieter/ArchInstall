@@ -13,7 +13,8 @@
 # Boot live iso and download this script using curl as below
 # curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
 # make executable with chmod 755 installscipt.sh
-# run ./installscript.sh
+# run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
+# ./installscript.sh 2>&1 | tee outfile
 
 
 # Display network interfaces
@@ -35,7 +36,7 @@ read -p "Enter network interface e.g. enp0s3, eth0 : " INTERFACE
 parted /dev/sda mklabel msdos
 parted /dev/sda mkpart primary ext4 1MiB 100%
 parted /dev/sda set 1 boot on
-mkfs.ext4 /dev/sdX1
+mkfs.ext4 /dev/sda1
 
 # Mount the partition
 mount /dev/sda1 /mnt
