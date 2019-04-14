@@ -67,13 +67,12 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Chroot into new system'
+echo '			Generate a here document script to run in chroot'
 echo '--------------------------------------------------------------------------------------------'
 
-arch-chroot /mnt
-printf '\n\n\n'
 
-
+#######################################################################################################################
+cat <<EOF > /mnt/install_script_part2.sh
 
 echo '--------------------------------------------------------------------------------------------'
 echo '			Update clock and set time zones'
@@ -114,7 +113,7 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Install and configure GRUB
+echo '			Install and configure GRUB'
 echo '--------------------------------------------------------------------------------------------'
 
 # GRUB Bootloader
@@ -123,3 +122,11 @@ grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 printf '\n\n\n'
+
+
+exit # to leave the chroot
+EOF
+#######################################################################################################################
+
+# run the script created above
+arch-chroot /mnt /install_script_part2.sh
