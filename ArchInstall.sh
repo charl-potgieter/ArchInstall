@@ -115,6 +115,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 printf '\n\n\n'
 
 
+echo '--------------------------------------------------------------------------------------------'
+echo '			Get and install server program list'
+echo '--------------------------------------------------------------------------------------------'
+
+curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.server > pkg.list.temp
+pacman -S --needed - < pkg.list.temp
+rm pkg.list.temp
+
 exit # to leave the chroot
 EOF
 #######################################################################################################################
