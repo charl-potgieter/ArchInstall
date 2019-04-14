@@ -19,7 +19,7 @@
 
 # Display network interfaces
 echo '--------------------------------------------------------------------------------------------'
-echo '			Network interfaces as below'
+echo '			Display network interfaces'
 echo '--------------------------------------------------------------------------------------------'
 printf '\n'
 ip addr show
@@ -73,32 +73,53 @@ echo '--------------------------------------------------------------------------
 arch-chroot /mnt
 printf '\n\n\n'
 
-# Update clock and set time zones
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Update clock and set time zones'
+echo '--------------------------------------------------------------------------------------------'
+
 timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
 hwclock --systohc
+printf '\n\n\n'
 
-# Set localisation
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Set localisation'
+echo '--------------------------------------------------------------------------------------------'
+
 cp /etc/locale.gen /etc/locale.gen.backup.auto
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "en_AU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 echo "LANG=en_AU.UTF-8" > /etc/locale.conf
+printf '\n\n\n'
 
 
-#Network configuration
+echo '--------------------------------------------------------------------------------------------'
+echo '			Network configuration'
+echo '--------------------------------------------------------------------------------------------'
+
 echo $HOSTNAME > /etc/hostname
 
 echo "127.0.0.1             localhost" >  /etc/hosts
 echo  "::1                   localhost" >> /etc/hosts
 echo  127.0.1.1 "    " $HOSTNAME".localdomain   " $HOSTNAME >> /etc/hosts
 
-
 ip link set $INTERFACE up
 systemctl enable dhcpcd@$INTERFACE.service
+printf '\n\n\n'
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Install and configure GRUB
+echo '--------------------------------------------------------------------------------------------'
 
 # GRUB Bootloader
 pacman -S grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
+printf '\n\n\n'
