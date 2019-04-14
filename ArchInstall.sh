@@ -116,6 +116,16 @@ curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg
 pacman -S --needed - < pkg.list.temp
 rm pkg.list.temp
 
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Enable daemons'
+echo '--------------------------------------------------------------------------------------------'
+
+systemctl enable sshd.service
+systemctl enable smb.service
+systemctl enable nmb.service
+
+
 exit # to leave the chroot
 EOF
 #######################################################################################################################
