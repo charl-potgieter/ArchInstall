@@ -1,13 +1,6 @@
 #!/bin/bash
 
 
-# Boot live iso and download this script using curl as below
-# curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
-# make executable with chmod 755 installscipt.sh
-# run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
-# ./installscript.sh 2>&1 | tee output
-
-
 # Display network interfaces
 echo '--------------------------------------------------------------------------------------------'
 echo '			Display network interfaces'
