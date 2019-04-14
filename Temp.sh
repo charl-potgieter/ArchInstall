@@ -19,8 +19,9 @@ visudo
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '        Add user charl (with home directory) and set password'
+echo '        Add user charl (with home directory) and set password and add to wheel group'
 echo '--------------------------------------------------------------------------------------------'
 
 useradd -m charl
 passwd charl
+gpasswd -a charl wheel
