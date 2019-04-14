@@ -1,15 +1,6 @@
 #!/bin/bash
 
 
-################################################################
-#
-# To Do
-# Maybe rethink the static IP address thing - try DHCPCD 
-# Add a date&timestamp to the /etc/locale.gen backup file
-# 
-################################################################
-
-
 # Boot live iso and download this script using curl as below
 # curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
 # make executable with chmod 755 installscipt.sh
