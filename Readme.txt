@@ -23,10 +23,13 @@ Setting up the VirtualBox Machine
 
 Run ArchInstall.sh
 -----------------------------
- - Don't use underscore in hostname - have experienced issues with this
+ - Boot live iso and download this script using curl as below
+ - curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
+ - make executable with chmod 755 installscipt.sh
+ - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
+	./installscript.sh 2>&1 | tee output
+- Don't use underscore in hostname - have experienced issues with this
  
-
-
 
 
 
