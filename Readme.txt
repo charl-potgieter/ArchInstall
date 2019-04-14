@@ -36,7 +36,6 @@ Run ArchInstall.sh
 Install openssh
 -----------------
 
-sudo pacman -S openssh
 
 Generate ssh keys:
 $ ssh-keygen
