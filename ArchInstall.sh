@@ -18,38 +18,60 @@
 
 
 # Display network interfaces
-echo '-------------------------------------------------------'
-echo '	Network interfaces as below'
-echo '-------------------------------------------------------'
-echo '\n\n'
+echo '--------------------------------------------------------------------------------------------'
+echo '			Network interfaces as below'
+echo '--------------------------------------------------------------------------------------------'
+printf '\n'
 ip addr show
-echo '\n\n'
+printf '\n\n\n'
 
 
-# Read hostname and ip address from keyboard
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Read details from user'
+echo '--------------------------------------------------------------------------------------------'
+
 read -p "Enter host name : " HOSTNAME
 # read -p "Enter IP address : " IPADDRESS
 read -p "Enter network interface e.g. enp0s3, eth0 : " INTERFACE
+printf '\n\n\n'
 
-	
-# Disk partitioning and formatting
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Disk partitioning, formatting and mount'
+echo '--------------------------------------------------------------------------------------------'
+
 parted /dev/sda mklabel msdos
 parted /dev/sda mkpart primary ext4 1MiB 100%
 parted /dev/sda set 1 boot on
 mkfs.ext4 /dev/sda1
-
-# Mount the partition
 mount /dev/sda1 /mnt
+printf '\n\n\n'
 
-# Install base package
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Install the base package'
+echo '--------------------------------------------------------------------------------------------'
+
 pacstrap /mnt base
+printf '\n\n\n'
 
-# Generate fstab
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Generate fstab'
+echo '--------------------------------------------------------------------------------------------'
+
 genfstab -U /mnt >> /mnt/etc/fstab
+printf '\n\n\n'
 
-# chroot into new system
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Chroot into new system'
+echo '--------------------------------------------------------------------------------------------'
+
 arch-chroot /mnt
-
+printf '\n\n\n'
 
 # Update clock and set time zones
 timedatectl set-ntp true
