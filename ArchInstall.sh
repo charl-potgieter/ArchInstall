@@ -129,4 +129,5 @@ EOF
 #######################################################################################################################
 
 # run the script created above
+chmod 755 /mnt/install_script_part2.sh
 arch-chroot /mnt /install_script_part2.sh
