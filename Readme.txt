@@ -21,82 +21,13 @@ Setting up the VirtualBox Machine
  - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
  
 
-Partiton the disks (manually)
+Run ArchInstall.sh
 -----------------------------
- - First boot ISO
- - Identify block devices with fdisk -l
- - run parted with say parted /dev/sdX:
-	mkquit(parted) mklabel msdos
-	(parted) mkpart primary ext4 1MiB 100%
-	(parted) set 1 boot on
-	(parted) quit
-
- - Format partition
-	mkfs.ext4 /dev/sdX1
-
-
-	
-General
--------
  - Don't use underscore in hostname - have experienced issues with this
  
 
 
 
-Static IP address
------------------
- - If performing a virtualbox install ensure that Network adaptor is set to Bridged (need a virtual machine restart after doing this)
- - All I have done to date is below (where ip address and enp0s3 are obtained from ip address show):
-	ip address add 192.168.0.4 broadcast + dev enp0s3
-
-NEED TO EXPAND HERE:  I COMPELTED THIS LATER:
-ip route add PREFIX via address dev interface (where prefix is gateway = 192.168.0.1)
-therefore:
-ip link set enp0s3 up
-ip route add 192.168.0.1 via 192.168.0.4 dev enp0s3
-	
-
-Configure basic usage for systemd-networkd
-https://wiki.archlinux.org/index.php/Systemd-networkd#Wired_adapter_using_a_static_IP
-	
-	
-Need to try:
-https://wiki.archlinux.org/index.php/Systemd-resolved
-Where is /run/systemd/resolve/stub-resolv.conf?
-
-	
-
-
-Bootloader
-----------
-Use GRUB
-	pacman -S grub
-	grub-install --target=i386-pc /dev/sdX   (NOT .../sdXi)
-	grub-mkconfig -o /boot/grub/grub.cfg
-
-	
-	
-
-Other Installation steps
-------------------------
-	
-???? Is there a need to install dhcpd?  Setup static IP address using dhcp especially for server
-
-Install vim:
-sudo pacman -S vim
-
-
-
-Notes for virtual machines
---------------------------
-Set network adaptor to "Bridged" to allow SSH access
-
-
-
-Hostname
---------gtsh
-See Arch Wiki network configuration.   May need to install samba and enable nmb.service to be able to ping / ssh based on hostname
-https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
 
 
 Install openssh
