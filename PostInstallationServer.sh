@@ -5,9 +5,9 @@ echo '--------------------------------------------------------------------------
 echo '			Get and install server program list'
 echo '--------------------------------------------------------------------------------------------'
 
-curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.server > pkg.list.temp
-pacman -S --needed - < pkg.list.temp
-rm pkg.list.temp
+curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.server > /pkg.list.temp
+pacman -S --needed - < /pkg.list.temp
+rm /pkg.list.temp
 
 printf '\n\n\n'
 
