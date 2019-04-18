@@ -2,6 +2,8 @@
 #   To Do
 # ----------------------------------------
 
+# RUN AS SUDO
+
 # install guest additions-nox
 # create share folder on virtualbox gui called server referenced to below dropbox folder:
 #   C:\Users\charl\Dropbox\Dropbox_Charl\Computer_Technical_ExcludingCode\Linux_System_Files\Server
