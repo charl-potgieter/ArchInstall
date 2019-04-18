@@ -3,6 +3,7 @@
 ##########################################################################################
 #
 #     Copies users from current machine to /exported.users folder
+#     Needs to be run as sudo
 #     Run this on any old machine to get users for import into new machine
 #     Inspired by below
 #     https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/
