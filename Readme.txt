@@ -30,7 +30,14 @@ Run ArchInstall.sh
  - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
 	./installscript.sh 2>&1 | tee output
 - Don't use underscore in hostname - have experienced issues with this
- 
+- Shutdown virtual machine, remove disc and reboot.
+
+
+
+Run either PostInstallationServer.sh or **** TBA *****
+---------------------------------------------------------
+- curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/PostInstallServer.sh > postinstall.sh
+
 
 
 
