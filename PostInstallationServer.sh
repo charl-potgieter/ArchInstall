@@ -9,3 +9,8 @@ mount -t vboxsf ConfigFiles /mnt/temp
 
 # Copy the configuration files over to the virtual machine etc folder
 cp /mnt/temp/smb.conf /etc/samba/smb.conf
+
+
+
+# Set the file permissions
+chmod 644 /etc/samba/smb.conf
