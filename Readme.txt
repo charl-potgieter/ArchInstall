@@ -18,6 +18,7 @@ Setting up the VirtualBox Machine
 --------------------------------
  - Ensure 64 bit arch is selected
  - Set network adaptor to bridged
+ - Create a shared folder called ConfigFiles which contains the relevant configuration files stored on the local machine
  - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
  
 
