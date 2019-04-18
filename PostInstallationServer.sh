@@ -21,7 +21,7 @@ echo '--------------------------------------------------------------------------
 printf '\n'
 echo 'editing with visudo.   Uncomment  %wheel    ALL=(ALL) ALL'
 read -p "Press enter to continue... "
-visudo
+EDITOR=vim visudo
 printf '\n\n\n'
 
 
