@@ -13,7 +13,18 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Copy configuration files from shared folder n local machine'
+echo '        Allow editing of sudo file'
+echo '--------------------------------------------------------------------------------------------'
+
+printf '\n'
+echo 'editing with visudo.   Uncomment  %wheel    ALL=(ALL) ALL'
+read -p "Press enter to continue... "
+visudo
+printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Copy configuration files from shared folder on local machine'
 echo '--------------------------------------------------------------------------------------------'
 
 # mount shared folder and copy files
