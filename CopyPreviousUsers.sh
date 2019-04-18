@@ -9,7 +9,7 @@
 ##########################################################################################
 
 
-if [ ! -d "/exported.users" ]; then
+if [ -d "/exported.users" ]; then
   echo 'Folder /exported.users already exists.  Aborting.'
   exit 1
 fi
