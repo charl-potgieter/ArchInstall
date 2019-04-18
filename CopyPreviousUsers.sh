@@ -2,8 +2,9 @@
 
 ##########################################################################################
 #
-#     Copies users from previous machines
-#     Adopted from below
+#     Copies users from current machine to /exported.users folder
+#     Run this on any old machine to get users for import into new machine
+#     Inspired by below
 #     https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/
 #
 ##########################################################################################
@@ -14,4 +15,9 @@ if [ -d "/exported.users" ]; then
   exit 1
 fi
 
-echo 'Code is running'
+export UGIDLIMIT=500
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534)' /etc/passwd > /exported.users/passwd.mig
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534)' /etc/group > /exported.users/group.mig
+awk -v LIMIT=$UGIDLIMIT -F: '($3>=LIMIT) && ($3!=65534) {print $1}' /etc/passwd | tee - |egrep -f - /etc/shadow > /exported.users/shadow.mig
+cp /etc/gshadow /exported.users/gshadow.mig
+
