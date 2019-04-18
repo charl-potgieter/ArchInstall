@@ -1,7 +1,7 @@
 
 # RUN AS SUDO
 
-pacman -S guest-utils-nox
+pacman -S virtualbox-guest-utils-nox
 
 # mount shared folder and copy files
 mkdir /mnt/temp
