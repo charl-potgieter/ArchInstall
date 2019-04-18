@@ -108,24 +108,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 printf '\n\n\n'
 
 
-echo '--------------------------------------------------------------------------------------------'
-echo '			Get and install server program list'
-echo '--------------------------------------------------------------------------------------------'
-
-curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.server > pkg.list.temp
-pacman -S --needed - < pkg.list.temp
-rm pkg.list.temp
-
-
-echo '--------------------------------------------------------------------------------------------'
-echo '			Enable daemons'
-echo '--------------------------------------------------------------------------------------------'
-
-systemctl enable sshd.service
-systemctl enable smb.service
-systemctl enable nmb.service
-
-
 
 echo '--------------------------------------------------------------------------------------------'
 echo '        Select the  root password'
@@ -144,13 +126,6 @@ read -p "Press enter to continue... "
 visudo
 
 
-echo '--------------------------------------------------------------------------------------------'
-echo '        Add user charl (with home directory) and set password and add to wheel group'
-echo '--------------------------------------------------------------------------------------------'
-
-useradd -m charl
-passwd charl
-gpasswd -a charl wheel
 
 
 exit # to leave the chroot
