@@ -41,6 +41,8 @@ Run either PostInstallationServer.sh or **** TBA *****
 	./postinstall.sh 2>&1 | tee postoutput
 
 
+During post-install of virtualbox package guest utils ensure that virtualbox-host-modules-arch is selected(see Arch Wiki)
+
 
 
 
