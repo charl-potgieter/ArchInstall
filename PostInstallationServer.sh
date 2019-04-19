@@ -55,6 +55,10 @@ echo '--------------------------------------------------------------------------
 
 # Set the file permissions
 chmod 644 /etc/samba/smb.conf
+chmod 644 /etc/group
+chmod 600 /etc/shadow
+chmod 600 /etc/gshadow
+
 
 
 printf '\n\n\n'
