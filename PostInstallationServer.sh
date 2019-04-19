@@ -1,8 +1,8 @@
 ################################# TODO ####################################################
-
-# AMMEND THE IMPORTED PASSWORD FILES TO SET PASSWORD FOR ALL USERS TO DEFAULT PASSWORD THAT CAN 
-# THEN BE CHANGED LATER FOR SECURITY REASONS, RAHTER THAN SAVING PASSWORDS.  THAT WAY I CAN MOVE 
-# THE CONFIGURATION FILES BACK TO DROPBOX
+#
+# Copy the samba password file to usr/bin/smbpasswd and set the permissions
+#
+###########################################################################################
 
 
 # RUN AS SUDO
