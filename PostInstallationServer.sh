@@ -26,15 +26,22 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Copy configuration files from shared folder on local machine'
+echo '			Copy configuration and user files from shared folder on local machine'
 echo '--------------------------------------------------------------------------------------------'
+
+# The copying of users inspired by the below
+# https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/
 
 # mount shared folder and copy files
 mkdir /mnt/temp
 mount -t vboxsf ConfigFiles /mnt/temp
 
-# Copy the configuration files over to the virtual machine etc folder
+# Copy the configuration and user files over to the virtual machine etc folder
 cp /mnt/temp/smb.conf /etc/samba/smb.conf
+cat /mnt/temp/passwd.mig >> /etc/passwd
+cat /mnt/temp/group.mig >> /etc/group
+cat /mnt/temp/shadow.mig >> /etc/shadow
+cp /mnt/temp/gshadow.mig /etc/gshadow
 
 umount /mnt/temp
 
