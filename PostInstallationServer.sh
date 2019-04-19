@@ -42,9 +42,6 @@ echo '--------------------------------------------------------------------------
 mkdir /mnt/temp
 mount -t vboxsf ConfigFiles /mnt/temp
 
-#######!!!!!!!!!! CHANGE THE PASSWORDS HERE TO BE DEFAULT PASSWORD AND THEN CHANGE LATE !!!!!!!!!!!!! ########
-### TO PREVENT THE INSECURE STORAGE OF PASSWORDS #########
-### CHANGE THE SHARE FOLDER LOCATION, OR SHOULD I EVEN POTENTIALLY MOVE TO GITHUB ??? ########################
 
 # Copy the configuration and user files over to the virtual machine etc folder
 cp /mnt/temp/smb.conf /etc/samba/smb.conf
