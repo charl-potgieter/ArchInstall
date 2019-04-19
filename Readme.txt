@@ -66,8 +66,8 @@ Install and configure git
 Install git
 
 Configure git:
-$ git config --global user.name  "Charl Potgieter"
-$ git config --global user.email "charl.j.potgieter@gmail.com"
+$ git config --global user.name  "Enter name here"
+$ git config --global user.email "Enter email here"
  
 
 Add PUBLIC key to my github account via copy and paste (SSH into virtual box if this is a virtual install to enable copy)
