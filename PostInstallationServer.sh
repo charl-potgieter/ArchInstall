@@ -59,7 +59,7 @@ chmod 644 /etc/samba/smb.conf
 chmod 644 /etc/group
 chmod 600 /etc/shadow
 chmod 600 /etc/gshadow
-chmod 755 /user/bin/smbpasswd
+chmod 755 /usr/bin/smbpasswd
 
 
 printf '\n\n\n'
