@@ -49,7 +49,6 @@ During post-install of virtualbox package guest utils ensure that virtualbox-hos
 Install openssh
 -----------------
 
-
 Generate ssh keys:
 $ ssh-keygen
 
@@ -60,15 +59,6 @@ Set up SSH server (just easier especially in virtualbox to SSH into the machine 
   
 
 
-Install and configure git
--------------------------
-
-Install git
-
-Configure git:
-$ git config --global user.name  "Enter name here"
-$ git config --global user.email "Enter email here"
- 
 
 Add PUBLIC key to my github account via copy and paste (SSH into virtual box if this is a virtual install to enable copy)
 Easier to copy from less in virtualbox (if logged in via git bash)
