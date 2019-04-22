@@ -51,7 +51,6 @@ cat /mnt/temp/shadow.mig >> /etc/shadow
 cp /mnt/temp/gshadow.mig /etc/gshadow
 cp /mnt/temp/smbpasswd /usr/bin/smbpasswd
 
-umount /mnt/temp
 
 printf '\n\n\n'
 
@@ -128,3 +127,11 @@ read -p "Press enter to continue... "
 vim /etc/ssh/sshd_config
 
 printf '\n\n\n'
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Unmount shared folder'
+echo '--------------------------------------------------------------------------------------------'
+
+umount /mnt/temp
