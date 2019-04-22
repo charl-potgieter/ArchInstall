@@ -111,7 +111,7 @@ echo '			Disable ssh passwords'
 echo '--------------------------------------------------------------------------------------------'
 
 echo 'set PasswordAuthentication no in sshd_config'
-read -p "Press enter to continue... "
+read -p "Press enter to continue and make above change... "
 vim /etc/ssh/sshd_config
 
 printf '\n\n\n'
