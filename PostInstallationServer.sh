@@ -49,6 +49,7 @@ cat /mnt/temp/passwd.mig >> /etc/passwd
 cat /mnt/temp/group.mig >> /etc/group
 cat /mnt/temp/shadow.mig >> /etc/shadow
 cp /mnt/temp/gshadow.mig /etc/gshadow
+cp /mnt/temp/smbpasswd /usr/bin/smbpasswd
 
 umount /mnt/temp
 
@@ -65,7 +66,7 @@ chmod 644 /etc/samba/smb.conf
 chmod 644 /etc/group
 chmod 600 /etc/shadow
 chmod 600 /etc/gshadow
-
+chmod 755 /user/bin/smbpasswd
 
 
 printf '\n\n\n'
