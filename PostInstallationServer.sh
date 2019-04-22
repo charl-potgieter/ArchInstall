@@ -99,7 +99,7 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Copy public key from shared folder on local pc
+echo '			Copy public key from shared folder on local pc'
 echo '--------------------------------------------------------------------------------------------'
 
 # below user needs to have already have been copied across in config files
