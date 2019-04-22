@@ -46,17 +46,14 @@ During post-install of virtualbox package guest utils ensure that virtualbox-hos
 
 
 
-Install openssh
+SSH Keys
 -----------------
+
+Do I need to generate ssh keys on server?
 
 Generate ssh keys:
 $ ssh-keygen
 
-Set up SSH server (just easier especially in virtualbox to SSH into the machine rather, that way I can copy and paste):
- - enable and start sshd.service (initially allowing password access)
- - copy key across from client using ssh-copy-id username@<remote-server.org or ip address>
-  - Set "PasswordAuthentication no" in /etc/ssh/sshd_config 
-  
 
 
 
