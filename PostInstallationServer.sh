@@ -96,3 +96,35 @@ git config --global user.name  "$GITNAME"
 git config --global user.email "$GITEMAIL"
 
 printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Copy public key from shared folder on local pc
+echo '--------------------------------------------------------------------------------------------'
+
+# below user needs to have already have been copied across in config files
+read -p "Enter user for home folder creation for ssh (User needs to exist in config files) : " SSHUSER
+mkdir /home/$SSHUSER
+mkdir /home/$SSHUSER/.ssh
+cat /mnt/temp/id_rsa.pub >> /home/$SSHUSER/.ssh/authorized_keys
+
+chown $SSHUSER:$SSHUSER /home/$SSHUSER
+chown $SSHUSER:$SSHUSER /home/$SSHUSER/.ssh
+chown $SSHUSER:$SSHUSER /home/$SSHUSER/.ssh/authorized_keys
+chmod 700 /home/$SSHUSER/.ssh
+chmod 600 /home/$SSHUSER/.ssh/authorized_keys
+
+
+printf '\n\n\n'
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Disable ssh passwords'
+echo '--------------------------------------------------------------------------------------------'
+
+echo 'set PasswordAuthentication no in sshd_config'
+read -p "Press enter to continue... "
+vim /etc/ssh/sshd_config
+
+printf '\n\n\n'
