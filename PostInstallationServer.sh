@@ -70,18 +70,6 @@ chmod 755 /usr/bin/smbpasswd
 
 printf '\n\n\n'
 
-echo '--------------------------------------------------------------------------------------------'
-echo '			Enable and start daemons'
-echo '--------------------------------------------------------------------------------------------'
-
-systemctl enable sshd.service
-systemctl enable smb.service
-systemctl enable nmb.service
-
-systemctl start sshd.service
-systemctl start smb.service
-systemctl start nmb.service
-
 
 
 echo '--------------------------------------------------------------------------------------------'
@@ -135,3 +123,17 @@ echo '			Unmount shared folder'
 echo '--------------------------------------------------------------------------------------------'
 
 umount /mnt/temp
+printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Enable and start daemons'
+echo '--------------------------------------------------------------------------------------------'
+
+systemctl enable sshd.service
+systemctl enable smb.service
+systemctl enable nmb.service
+
+systemctl start sshd.service
+systemctl start smb.service
+systemctl start nmb.service
