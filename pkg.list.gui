@@ -2,3 +2,5 @@ xorg-server
 mesa
 xfce4
 xfce4-goodies
+virtualbox-guest-utils
+firefox
