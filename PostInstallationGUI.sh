@@ -1,4 +1,13 @@
+# TO DO
+# - Add user to wheel group
+# - add exec startxfce4 to Xinitrc  see arch wiki xfce (need to do this in dotfiles)
+# - auto start X at login (see arch wiki xinit) (need to do this in dotfiles)
+
+
+
 # RUN AS SUDO
+
+
 
 
 echo '--------------------------------------------------------------------------------------------'
