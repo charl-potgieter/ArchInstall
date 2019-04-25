@@ -1,5 +1,4 @@
 # TO DO
-# - Add user to wheel group
 # - add exec startxfce4 to Xinitrc  see arch wiki xfce (need to do this in dotfiles)
 # - auto start X at login (see arch wiki xinit) (need to do this in dotfiles)
 
@@ -41,11 +40,12 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Add user'
+echo '			Create new user and add to wheel'
 echo '--------------------------------------------------------------------------------------------'
 
 read -p "Enter user name (to be added to wheel group and home dir created) : " MYUSERNAME
 useradd -m $MYUSERNAME
+gpasswd -a $MYUSERNAME wheel
 printf '\n\n\n'
 
 echo '--------------------------------------------------------------------------------------------'
