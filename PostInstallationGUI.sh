@@ -67,3 +67,25 @@ git config --global user.name  "$GITNAME"
 git config --global user.email "$GITEMAIL"
 
 printf '\n\n\n'
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Remove existing dot files'
+echo '--------------------------------------------------------------------------------------------'
+
+rm -r $HOME/.*
+rm $HOME/.*
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Clone and checkout dotfile repo'
+echo '--------------------------------------------------------------------------------------------'
+
+git clone --bare git@github.com:charl-potgieter/dotfiles.git $HOME/.dotfiles.git
+git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME checkout
+source ~/.bashrc
+
+
+
+
