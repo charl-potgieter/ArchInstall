@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo '--------------------------------------------------------------------------------------------'
+echo 'Ensure device for installation is mounted in /mnt before continuing'
+echo 'Can use Diskprepare.sh in this repository in virtualbox'
+read -p 'If not press ctrl-C to cancel, enter to continue'
+echo '--------------------------------------------------------------------------------------------'
+
 
 # Display network interfaces
 echo '--------------------------------------------------------------------------------------------'
@@ -18,18 +24,6 @@ echo '--------------------------------------------------------------------------
 read -p "Enter host name : " HOSTNAME
 # read -p "Enter IP address : " IPADDRESS
 read -p "Enter network interface e.g. enp0s3, eth0 : " INTERFACE
-printf '\n\n\n'
-
-
-echo '--------------------------------------------------------------------------------------------'
-echo '			Disk partitioning, formatting and mount'
-echo '--------------------------------------------------------------------------------------------'
-
-parted /dev/sda mklabel msdos
-parted /dev/sda mkpart primary ext4 1MiB 100%
-parted /dev/sda set 1 boot on
-mkfs.ext4 /dev/sda1
-mount /dev/sda1 /mnt
 printf '\n\n\n'
 
 
