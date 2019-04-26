@@ -92,6 +92,8 @@ printf '\n\n\n'
 
 echo '--------------------------------------------------------------------------------------------'
 echo '			Install and configure GRUB'
+echo '      NOTE THIS IS FOR BIOS INSTALL ONLY'
+read -p 'If not press ctrl-C to cancel, enter to continue'
 echo '--------------------------------------------------------------------------------------------'
 
 # GRUB Bootloader
