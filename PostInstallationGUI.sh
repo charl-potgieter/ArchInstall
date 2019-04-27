@@ -82,7 +82,7 @@ echo '--------------------------------------------------------------------------
 echo '			Clone and checkout dotfile repo'
 echo '--------------------------------------------------------------------------------------------'
 
-git clone --bare git@github.com:charl-potgieter/dotfiles.git $HOME/.dotfiles.git
+git clone --bare https://github.com/charl-potgieter/dotfiles.git $HOME/.dotfiles.git
 git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME checkout
 source ~/.bashrc
 
