@@ -3,8 +3,10 @@ Add to postinstall script
  - ssh-keygen
  - mount dropbox (I am already mounting a subfolder in dropbox for config - first ensure that this is unmounted)
  
- Copy key to github account using xclip:
+ Copy key to github account using xclip (or maybe do this via the shared virtualbox folder to keep consistent as
+ I won't be able to use xclip on the server)
  https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
+ 
  
  Test ssh key in github:
  https://help.github.com/en/articles/testing-your-ssh-connection
