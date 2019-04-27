@@ -36,7 +36,7 @@ Run ArchInstall.sh
 
 Run either PostInstallationServer.sh or PostInstallationServer.sh
 ---------------------------------------------------------
-- curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/PostInstallServer(or ..GUI).sh > postinstall.sh
+- curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/PostInstallationServer(or ..GUI).sh > postinstall.sh
 
 - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
 	./postinstall.sh 2>&1 | tee postoutput
