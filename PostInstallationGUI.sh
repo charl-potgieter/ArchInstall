@@ -69,3 +69,17 @@ git config --global user.name  "$GITNAME"
 git config --global user.email "$GITEMAIL"
 
 printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Mount dropbox shared folder'
+echo '--------------------------------------------------------------------------------------------'
+
+printf '\n\n\n'
+echo 'Ensure a virtualbox shared folder named Dropbox is set up.
+read -p "Press enter to continue... "
+
+mkdir /home/$MYUSERNAME/Dropbox
+chown charl:charl /home/$MYUSERNAME/Dropbox
+
+
