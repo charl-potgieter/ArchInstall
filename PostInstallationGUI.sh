@@ -72,14 +72,20 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Mount dropbox shared folder'
+echo '			Mount dropbox shared folder and use symlink to home folder'
 echo '--------------------------------------------------------------------------------------------'
 
 printf '\n\n\n'
-echo 'Ensure a virtualbox shared folder named Dropbox is set up.
+echo 'Ensure a virtualbox shared folder named Dropbox is set up.'
+echo 'Ensure auto-mount is ticked'
 read -p "Press enter to continue... "
 
+systemctl enable vboxservice.service
+systemctl start vboxservice.service
 mkdir /home/$MYUSERNAME/Dropbox
 chown charl:charl /home/$MYUSERNAME/Dropbox
+chown charl:charl /media/sf_Dropbox
+ln -s /media/sf_Dropbox /home/$MYUSERNAME/Dropbox
+
 
 
