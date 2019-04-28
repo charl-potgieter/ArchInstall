@@ -83,8 +83,8 @@ read -p "Press enter to continue... "
 systemctl enable vboxservice.service
 systemctl start vboxservice.service
 mkdir /home/$MYUSERNAME/Dropbox
-chown charl:charl /home/$MYUSERNAME/Dropbox
-chown charl:charl /media/sf_Dropbox
+chown $MYUSERNAME:$MYUSERNAME /home/$MYUSERNAME/Dropbox
+chown $MYUSERNAME:$MYUSERNAME /media/sf_Dropbox
 ln -s /media/sf_Dropbox /home/$MYUSERNAME/Dropbox
 
 
