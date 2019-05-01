@@ -75,13 +75,29 @@ echo '--------------------------------------------------------------------------
 echo '			Mount dropbox shared folder and use symlink to home folder'
 echo '--------------------------------------------------------------------------------------------'
 
-printf '\n\n\n'
+printf '\n'
 echo 'Ensure a virtualbox shared folder named Dropbox is set up.'
 echo 'Ensure auto-mount is ticked'
 read -p "Press enter to continue... "
 
+# add user to vboxsf group to enable access to shared folder
+gpasswd -a $MYUSERNAME vboxsf
+
 systemctl enable vboxservice.service
 systemctl start vboxservice.service
 ln -s /media/sf_Dropbox /home/$MYUSERNAME/Dropbox
+
+printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Generate SSH keys'
+echo '--------------------------------------------------------------------------------------------'
+
+ssh-keygen
+
+
+
+
 
 
