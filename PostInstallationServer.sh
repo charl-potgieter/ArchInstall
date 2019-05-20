@@ -68,6 +68,7 @@ chmod 644 /etc/group
 chmod 600 /etc/shadow
 chmod 600 /etc/gshadow
 chmod 755 /usr/bin/smbpasswd
+chmod 644 /etc/fstab_live_system
 
 
 printf '\n\n\n'
