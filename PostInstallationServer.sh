@@ -45,11 +45,13 @@ mount -t vboxsf ConfigFiles /mnt/temp
 
 # Copy the configuration and user files over to the virtual machine etc folder
 cp /mnt/temp/smb.conf /etc/samba/smb.conf
+cp /mnt/temp/fstab_live_system /etc/fstab_live_system
 cat /mnt/temp/passwd.mig >> /etc/passwd
 cat /mnt/temp/group.mig >> /etc/group
 cat /mnt/temp/shadow.mig >> /etc/shadow
 cp /mnt/temp/gshadow.mig /etc/gshadow
 cp /mnt/temp/smbpasswd /usr/bin/smbpasswd
+
 
 
 printf '\n\n\n'
@@ -70,6 +72,16 @@ chmod 755 /usr/bin/smbpasswd
 
 printf '\n\n\n'
 
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Create directories for mounting data and backups in the live system
+echo '--------------------------------------------------------------------------------------------'
+
+mkdir /srv/samba
+mkdir /mnt/backups/usb_server_os
+mkdir /mnt/backups/mirror_overnight
+mkdir /mnt/backups/snapshots
 
 
 echo '--------------------------------------------------------------------------------------------'
