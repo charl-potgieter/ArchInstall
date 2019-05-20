@@ -75,7 +75,7 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Create directories for mounting data and backups in the live system
+echo '			Create directories for mounting data and backups in the live system'
 echo '--------------------------------------------------------------------------------------------'
 
 mkdir /srv/samba
