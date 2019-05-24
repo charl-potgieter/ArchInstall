@@ -11,7 +11,7 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Get and install server program list'
+echo '			Get and install GUI program list'
 echo '--------------------------------------------------------------------------------------------'
 
 curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.gui > /pkg.list.temp
@@ -99,5 +99,15 @@ ssh-keygen
 
 
 
+echo '--------------------------------------------------------------------------------------------'
+echo '			Make directories for mounting samba shares'
+echo '--------------------------------------------------------------------------------------------'
 
-
+mkdir /home/$MYUSERNAME/Documents_Charl
+mkdir /home/$MYUSERNAME/Documents_Kerrie
+mkdir /home/$MYUSERNAME/Documents_Dylan
+mkdir /home/$MYUSERNAME/Documents_Jared
+mkdir /home/$MYUSERNAME/Pictures
+mkdir /home/$MYUSERNAME/HomeVideos
+mkdir /home/$MYUSERNAME/Videos
+mkdir /home/$MYUSERNAME/Music
