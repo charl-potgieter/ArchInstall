@@ -29,3 +29,7 @@ youtube-dl
 feh
 pcmanfm
 xclip
+dhcpcd
+network-manager-applet
+networkmanager
+wpa_supplicant
