@@ -75,7 +75,7 @@ Remove any existing dotfiles from $HOME which were automatically created  on sys
 (No need to create a .gitignore as I have one in the below github repository)
 
 Clone from github into a bare repo (cloning automatically creates a remote called origin)
-	git clone --bare git@github.com:charl-potgieter/test_dotfiles.git $HOME/.dotfiles.git
+	git clone --bare git@github.com:charl-potgieter/dotfiles.git $HOME/.dotfiles.git
 
 
 Checkout	
