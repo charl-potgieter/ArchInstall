@@ -1,3 +1,18 @@
+High Level Steps
+----------------
+(1) Create machine in virtualbox
+(2) Save tarball of the virtual machine to a USB drive shared by Virtualbox host
+(3) Copy tarball onto an existing Arch Linux USB installer disk (doesn't need to be latest verion as this is used for admin only)
+(4) Boot new machine using above installer disk and extract tarball onto new machine.
+(5) Tweak new machine for setup outside outside of Virtualbox
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+				(1) Create machine in VirtualBox
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 Validate ISO
 -------------
 
