@@ -6,6 +6,10 @@ High Level Steps
 https://unix.stackexchange.com/questions/61774/create-a-tar-archive-split-into-blocks-of-a-maximum-size
 Below command seems to work for split
 tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar_
+The tarball can be put back together using below command (SHOULDNT DO THIS AS WILL THEN AGAIN HIT FILE SIZE LIMIT?)
+cat export.tar_* > combined.tar
+
+
 
 (2) Save tarball of the virtual machine to a USB drive shared by Virtualbox host
 (3) Copy tarball onto an existing Arch Linux USB installer disk (doesn't need to be latest verion as this is used for admin only)
