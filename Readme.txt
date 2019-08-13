@@ -1,8 +1,12 @@
 High Level Steps
 ----------------
 (1) Create machine in virtualbox
+
 (1.5) Due to FAT32 file size constraints the USB may need to be formated as ExFAT for larger tarballs?  A better option may be to split tarball 
 https://unix.stackexchange.com/questions/61774/create-a-tar-archive-split-into-blocks-of-a-maximum-size
+Below command seems to work for split
+tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar_
+
 (2) Save tarball of the virtual machine to a USB drive shared by Virtualbox host
 (3) Copy tarball onto an existing Arch Linux USB installer disk (doesn't need to be latest verion as this is used for admin only)
 (4) Boot new machine using above installer disk and extract tarball onto new machine.
