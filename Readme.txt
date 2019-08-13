@@ -6,8 +6,8 @@ High Level Steps
 https://unix.stackexchange.com/questions/61774/create-a-tar-archive-split-into-blocks-of-a-maximum-size
 Below command seems to work for split
 tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar_
-The tarball can be put back together using below command (SHOULDNT DO THIS AS WILL THEN AGAIN HIT FILE SIZE LIMIT?)
-cat export.tar_* > combined.tar
+The tarball can be extracted with someting like below (check tar flags though)
+cat /mnt/temp/TarOutput/export.tar_a* | tar xvzf - -C /mnt/temp/TestExtract/
 
 
 
