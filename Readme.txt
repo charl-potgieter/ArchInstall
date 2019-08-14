@@ -108,12 +108,10 @@ mount -t vboxsf -o gid=vboxsf shared_folder_name /mnt
  - Extract the virtualbox machine as a tarball rather than rsync in order to maintain linux file permissions and owners on the windows host.
  
  - Download the folders to exclude from the tarball from this respository 
- 
- - Split the tarball to ensure that it does not get too big for FAT32 file system
 curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/VirtualTarExclFile > /mnt/ExclFile
 
- - Utilise the below command to tar
-tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar.gz_
+ - Split the tarball to ensure that it does not get too big for FAT32 file system
+tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=50MB - /mnt/export.tar.gz_
 
 
 
