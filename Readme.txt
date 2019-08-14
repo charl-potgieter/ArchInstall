@@ -140,7 +140,11 @@ cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C
  mkinitcpio -p linux
  
 
-????Need to uninstall virtualbox guest additions, disable daemon?   Received an error message on first boot?
+Need to uninstall virtualbox guest additions and disable daemon?
+pacman -Rs virtualbox-guest-utils (or virtualbox-guest-utils-nox for VirtualBox Guest utilities without X support)
+systemctl disable vboxservice.service
+
+????Need to do something with networking - there is a long start job running at startup ????
 
  - exit chroot, shutdown, remove usb installer and power up new machine.
  
