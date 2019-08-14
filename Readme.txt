@@ -94,19 +94,27 @@ Can now use git commands with alias e.g. gitdot status etc, gitdot push origin m
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-			(2) Export machine out of virtualbox tto phyiscal
+		(2) Export machine out of virtualbox (Windows Host) to phyiscal linux machine
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-(1) Utilise an Arch Linux Install USB (doesn't need to be latest version as machine has already been built in virtualbox)
+ - Utilise an Arch Linux Install USB (doesn't need to be latest version as machine has already been built in virtualbox)
 My previous USB installer(201907) was created on Windows using Rufus as per Arch Wiki below
 https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_Windows
 
+ - Create a virtualbox share folder on a USB connected to the Windows host, ideally on the Arch Installer USB above (assuming it is formatted FAT32 and readable by windows.  Mount as below per Arch Wiki Virtualbox page.
+mount -t vboxsf -o gid=vboxsf shared_folder_name mount_point_on_guest_system
 
-(1.5) Due to FAT32 file size constraints the USB may need to be formated as ExFAT for larger tarballs?  A better option may be to split tarball 
-https://unix.stackexchange.com/questions/61774/create-a-tar-archive-split-into-blocks-of-a-maximum-size
-Below command seems to work for split
-tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar_
+ - Extract the virtualbox machine as a tarball rather than rsync in order to maintain linux file permissions and owners on the windows host.
+ 
+ - Split the tarball to ensure that it does not get too big for FAT32 file system
+
+ - Utilise the below command to tar
+tar --exclude-from=ExclFile --xattrs -czpvf - / | split --bytes=50MB - export.tar.gz_
+
+NEED TO WORK OUT THE BEST WAY TO GET EXCLFILE INTO SYSTEM - MAYBE VIA A CURL
+
+
 The tarball can be extracted with someting like below (check tar flags though)
 cat /mnt/temp/TarOutput/export.tar_a* | tar xvzf - -C /mnt/temp/TestExtract/
 
