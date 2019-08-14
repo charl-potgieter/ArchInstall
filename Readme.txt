@@ -122,7 +122,7 @@ sudo tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB 
 - The arch installer usb is mounted at /run/archiso/bootmnt  (to confirm can attempt to mount the usb again and it will most likely give an error message stating it is already mounted at above location).  The Tarballs saved down to the virtualbox shared location will likely be saved in a subfolder of /run/archiso/bootmnt.
 
 
-The tarball can be extracted with someting like below (check tar flags though)
+ - The tarball can be extracted with someting like below (check tar flags though)
 cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C /mnt/temp/TestExtract/
 
 (5) Tweak new machine for setup outside outside of Virtualbox
