@@ -140,6 +140,6 @@ cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C
  mkinitcpio -p linux
  
  
- - exit chroot, shitdown, remove usb installer and power up new machine.
+ - exit chroot, shutdown, remove usb installer and power up new machine.
  
 
