@@ -97,6 +97,8 @@ Can now use git commands with alias e.g. gitdot status etc, gitdot push origin m
 		(2) Export machine out of virtualbox (Windows Host) to phyiscal linux machine
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+ - See ArchWiki for general guidance
+ https://wiki.archlinux.org/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine
 
  - Utilise an Arch Linux Install USB (doesn't need to be latest version as machine has already been built in virtualbox)
 My previous USB installer(201907) was created on Windows using Rufus as per Arch Wiki below
@@ -125,6 +127,19 @@ sudo tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB 
  - The tarball can be extracted with someting like below (check tar flags though)
 cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C /mnt/temp/TestExtract/
 
-(5) Tweak new machine for setup outside outside of Virtualbox
 
+ - chroot into the new system using arch-chroot /mnt  (remember this is being run from the arch installer usb)
+
+ - Reinstall GRUB or other bootloader (refer arch wiki for general instructions) 
+ grub-install --target=i386-pc /dev/sdX    (NOT sdX1 etc)
+ grub-mkconfig -o /boot/grub/grub.cfg
+ 
+  - Adjust fstab  (if using a single partition I don't think there is anything to do here)
+
+ - Re-generate the initramfs image
+ mkinitcpio -p linux
+ 
+ 
+ - exit chroot and reboot
+ 
 
