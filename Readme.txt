@@ -113,7 +113,7 @@ curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/Vir
  - Split the tarball to ensure that it does not get too big for FAT32 file system
 tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=50MB - /mnt/export.tar.gz_
 
-
+ - Ensure the target machine hard drive is prepared (using gparted USB live).  Formatted Ext4 and boot flag set.
 
 The tarball can be extracted with someting like below (check tar flags though)
 cat /mnt/temp/TarOutput/export.tar_a* | tar xvzf - -C /mnt/temp/TestExtract/
