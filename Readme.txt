@@ -139,7 +139,9 @@ cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C
  - Re-generate the initramfs image
  mkinitcpio -p linux
  
- 
+
+????Need to uninstall virtualbox guest additions, disable daemon?   Received an error message on first boot?
+
  - exit chroot, shutdown, remove usb installer and power up new machine.
  
 
