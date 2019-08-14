@@ -144,8 +144,14 @@ Need to uninstall virtualbox guest additions and disable daemon?
 pacman -Rs virtualbox-guest-utils (or virtualbox-guest-utils-nox for VirtualBox Guest utilities without X support)
 systemctl disable vboxservice.service
 
-????Need to do something with networking - there is a long start job running at startup ????
-
  - exit chroot, shutdown, remove usb installer and power up new machine.
+ 
+  - When booting there may be a message that start job is running to connect to a network interface e.g enp0s3 which is how the virtual machine connected to network.  Remove this with e.g.:
+ sudo systemctl disable dhcpcd@enp0s3.service
+ See also 
+https://www.linuxbabe.com/virtualbox/a-start-job-is-running-for-sys-subsystem-net-devices-eth0-device
+
+
+
  
 
