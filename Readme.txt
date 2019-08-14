@@ -114,15 +114,17 @@ curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/Vir
 sudo tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB - /mnt/export.tar.gz_
 
  - Ensure the target machine hard drive is prepared (using gparted USB live).  Formatted Ext4 and boot flag set.
+ 
+ - Boot into the new physical machine with the Arch Install Linux USB drive
+ 
+ -  Mount the target hard drive where the new installation will take place eg. mount /dev/sda1 /mnt
+
+- The arch installer usb is mounted at /run/archiso/bootmnt  (to confirm can attempt to mount the usb again and it will most likely give an error message stating it is already mounted at above location).  The Tarballs saved down to the virtualbox shared location will likely be saved in a subfolder of /run/archiso/bootmnt.
+
 
 The tarball can be extracted with someting like below (check tar flags though)
-cat /mnt/temp/TarOutput/export.tar_a* | tar xvzf - -C /mnt/temp/TestExtract/
+cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C /mnt/temp/TestExtract/
 
-
-
-(2) Save tarball of the virtual machine to a USB drive shared by Virtualbox host
-(3) Copy tarball onto an existing Arch Linux USB installer disk (doesn't need to be latest verion as this is used for admin only)
-(4) Boot new machine using above installer disk and extract tarball onto new machine.
 (5) Tweak new machine for setup outside outside of Virtualbox
 
 
