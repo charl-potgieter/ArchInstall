@@ -111,7 +111,7 @@ mount -t vboxsf -o gid=vboxsf shared_folder_name /mnt
 curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/VirtualTarExclFile > /mnt/ExclFile
 
  - Split the tarball to ensure that it does not get too big for FAT32 file system
-tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB - /mnt/export.tar.gz_
+sudo tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB - /mnt/export.tar.gz_
 
  - Ensure the target machine hard drive is prepared (using gparted USB live).  Formatted Ext4 and boot flag set.
 
