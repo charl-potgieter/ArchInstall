@@ -37,6 +37,7 @@ Run ArchInstall.sh
 	./installscript.sh 2>&1 | tee output
 - Don't use underscore in hostname - have experienced issues with this
 - Shutdown virtual machine, remove disc and reboot.
+- ***** NB above step!!!! **** Forgetting to do this will attempt next install steps on install image!
 
 
 
