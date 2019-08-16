@@ -63,10 +63,8 @@ Generate ssh keys:
 $ ssh-keygen
 
 
-
-
 Add PUBLIC key to my github account via copy and paste (SSH into virtual box if this is a virtual install to enable copy)
-Easier to copy from less in virtualbox (if logged in via git bash)
+Easier to copy from less in virtualbox (if logged in via git bash).   Another option is to copy into a shared folder.
 
 
 Clone existing github dotfiles into a bare repository
@@ -77,6 +75,7 @@ https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare
 https://news.ycombinator.com/item?id=11070797
 
 Remove any existing dotfiles from $HOME which were automatically created  on system install e.g. .bashrc
+(DONT type rm .* as this has potential to delete everything in $HOME)
 
 (No need to create a .gitignore as I have one in the below github repository)
 
