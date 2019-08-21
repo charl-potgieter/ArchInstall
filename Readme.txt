@@ -76,6 +76,8 @@ Easier to copy from less in virtualbox (if logged in via git bash).   Another op
 Clone existing github dotfiles into a bare repository
 -------------------------------------------------------
 
+Ensure that machine has been restarted and I am now logged in as user not root
+
 Inspiration from below links:
 https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 https://news.ycombinator.com/item?id=11070797
