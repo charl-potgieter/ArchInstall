@@ -24,6 +24,8 @@ Setting up the VirtualBox Machine
  - Consider a fixed rather than dynamic hard drive size of performance is key factor
  - Ensure 64 bit arch is selected
  - Set network adaptor to bridged
+ - Adjust video memory if required
+ - Adjust number of CPUs if required 
  - Create a shared folder called ConfigFiles which contains the relevant configuration files stored on the local machine
  - Create a shared folder called Dropbox
  - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
