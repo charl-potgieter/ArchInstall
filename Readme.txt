@@ -100,6 +100,12 @@ Refresh bashrc
 Can now use git commands with alias e.g. gitdot status etc, gitdot push origin master
 
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		Sundry
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If I am having trouble getting fill screen resolution in XFCE worth right clicking desktop and checking selected screen resolution
+
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		(2) Export machine out of virtualbox (Windows Host) to phyiscal linux machine
@@ -158,6 +164,8 @@ systemctl disable vboxservice.service
  sudo systemctl disable dhcpcd@enp0s3.service
  See also 
 https://www.linuxbabe.com/virtualbox/a-start-job-is-running-for-sys-subsystem-net-devices-eth0-device
+
+
 
 
 
