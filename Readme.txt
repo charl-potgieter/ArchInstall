@@ -103,8 +103,7 @@ Can now use git commands with alias e.g. gitdot status etc, gitdot push origin m
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		Sundry
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-If I am having trouble getting fill screen resolution in XFCE worth right clicking desktop and checking selected screen resolution
-
+If I am having trouble getting fill screen resolution in XFCE worth checking correct resolution under start menu->settings->Display
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
