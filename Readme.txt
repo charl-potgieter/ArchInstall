@@ -137,7 +137,7 @@ sudo tar --exclude-from=/mnt/ExclFile --xattrs -czpvf - / | split --bytes=500MB 
 
 
  - The tarball can be extracted with someting like below (check tar flags though)
-cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C /mnt/temp/TestExtract/
+cat /run/archiso/bootmnt/VirtualMachineTarBalls/export.tar.gz_* | tar xvzfp - -C /mnt
 
 
  - chroot into the new system using arch-chroot /mnt  (remember this is being run from the arch installer usb)
