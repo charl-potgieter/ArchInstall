@@ -21,7 +21,6 @@ In order to verify download:
 	
 Setting up the VirtualBox Machine
 --------------------------------
- - Consider a fixed rather than dynamic hard drive size of performance is key factor
  - Ensure 64 bit arch is selected
  - Set network adaptor to bridged
  - Adjust video memory if required
