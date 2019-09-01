@@ -86,19 +86,6 @@ mkdir /mnt/backups/snapshots
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Setup git'
-echo '--------------------------------------------------------------------------------------------'
-
-read -p "Enter git name : " GITNAME
-read -p "Enter git email address : " GITEMAIL
-
-git config --global user.name  "$GITNAME"
-git config --global user.email "$GITEMAIL"
-
-printf '\n\n\n'
-
-
-echo '--------------------------------------------------------------------------------------------'
 echo '			Copy public key from shared folder on local pc'
 echo '--------------------------------------------------------------------------------------------'
 
