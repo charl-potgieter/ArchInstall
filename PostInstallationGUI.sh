@@ -10,16 +10,6 @@ pacman -Syu
 printf '\n\n\n'
 
 
-echo '--------------------------------------------------------------------------------------------'
-echo '			Get and install GUI program list'
-echo '--------------------------------------------------------------------------------------------'
-
-curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.gui > /pkg.list.temp
-pacman -S --needed - < /pkg.list.temp
-rm /pkg.list.temp
-
-printf '\n\n\n'
-
 
 echo '--------------------------------------------------------------------------------------------'
 echo '        Allow editing of sudo file'
