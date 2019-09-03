@@ -32,7 +32,10 @@ Setting up the VirtualBox Machine
 
 Run ArchInstall.sh
 -----------------------------
- - Ensure target disk is formatted EXT4 and boot flag is set on.  (If preparing the install in Virtualbox can use Diskprepar.sh code in this repository.)
+ - Ensure target disk is formatted EXT4 and boot flag is set on.  If preparing the install in Virtualbox can use Diskprepar.sh code in this repository
+		(i) curl https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/DiskPrepare.sh > DiskPrepare.sh
+		(ii) chmod 755 DiskPrepare.sh
+		(iii) ./DisPrepare.sh
  -  Mount target drive where OS is to be installed at /mnt
  - Boot live iso and download this script using curl as below
  - curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/ArchInstall.sh > installscript.sh
