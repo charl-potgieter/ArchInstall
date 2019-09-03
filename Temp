@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Install virtualbox guest additions'
+echo '--------------------------------------------------------------------------------------------'
+
+read -p "Enter (1) for virtualbox-guest-utils-nox, (2) for virtualbox-guest-utils : " VBOX
+
+if [[ $VBOX -eq 1 ]]; then
+	echo "one"
+else
+	echo "two"
+fi
+

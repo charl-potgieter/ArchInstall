@@ -18,6 +18,7 @@ In order to verify download:
 	gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
 	(note the iso and signature file need to be saved in same folder.  Above file references is the signature file)
 
+
 	
 Setting up the VirtualBox Machine
 --------------------------------
@@ -25,8 +26,6 @@ Setting up the VirtualBox Machine
  - Set network adaptor to bridged
  - Adjust video memory if required
  - Adjust number of CPUs if required 
- - Create a shared folder called ConfigFiles which contains the relevant configuration files stored on the local machine
- - Create a shared folder called Dropbox
  - Stick with BIOS boot.   EFI mode seems more trouble than it is worth
 
  
@@ -46,9 +45,9 @@ Run ArchInstall.sh
 
 
 
-Run either PostInstallationServer.sh or PostInstallationServer.sh
----------------------------------------------------------
-- curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/PostInstallationServer(or ..GUI).sh > postinstall.sh
+After reboot
+-------------
+
 
 - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
 	./postinstall.sh 2>&1 | tee postoutput

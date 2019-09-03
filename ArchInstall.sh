@@ -120,6 +120,21 @@ printf '\n\n\n'
 
 
 
+echo '--------------------------------------------------------------------------------------------'
+echo '			Install virtualbox guest additions'
+echo '--------------------------------------------------------------------------------------------'
+
+read -p "Enter (1) for virtualbox-guest-utils-nox, (2) for virtualbox-guest-utils : " VBOX
+
+if [[ $VBOX -eq 1 ]]; then
+	sudo pacman -S virtualbox-guest-utils-nox
+else
+	sudo pacman -S virtualbox-guest-utils
+fi
+
+
+
+
 
 echo '--------------------------------------------------------------------------------------------'
 echo '        Select the  root password'
