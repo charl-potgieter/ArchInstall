@@ -36,7 +36,7 @@ printf '\n'
 blkid
 printf '\n'	
 read -p "Enter name of partition to mount for install : " DEVICEMOUNT
-mount DEVICEMOUNT /mnt
+mount $DEVICEMOUNT /mnt
 printf '\n\n\n'
 
 
