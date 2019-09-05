@@ -172,9 +172,9 @@ echo '--------------------------------------------------------------------------
 read -p "Enter (1) for virtualbox-guest-utils-nox, (2) for virtualbox-guest-utils : " VBOX
 
 if [[ $VBOX -eq 1 ]]; then
-	sudo pacman -S virtualbox-guest-utils-nox
+	pacman -S virtualbox-guest-utils-nox
 else
-	sudo pacman -S virtualbox-guest-utils
+	pacman -S virtualbox-guest-utils
 fi
 
 
