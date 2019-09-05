@@ -21,7 +21,7 @@ then
 	parted $DEVICE mklabel msdos
 	parted $DEVICE mkpart primary ext4 1MiB 100%
 	parted $DEVICE set 1 boot on
-	mkfs.ext4 $DEVICE
+	mkfs.ext4 $DEVICE1
 	echo 'Device formatted'
 fi
 
