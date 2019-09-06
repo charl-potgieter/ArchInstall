@@ -15,7 +15,7 @@ if [[ $PROCEED == "yes" ]];
 then
 	echo 'Devices are as follows'
 	printf '\n'
-	lsblk
+	fdisk -l
 	printf '\n'	
 	read -p "Enter device to format : " DEVICE
 	parted $DEVICE mklabel msdos
