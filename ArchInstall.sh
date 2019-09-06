@@ -171,7 +171,7 @@ echo '--------------------------------------------------------------------------
 
 read -p "Enter (1) for virtualbox-guest-utils-nox, (2) for virtualbox-guest-utils : " VBOX
 
-if [[ $VBOX -eq 1 ]]; then
+if [[ "$VBOX" == 1 ]]; then
 	pacman -S virtualbox-guest-utils-nox
 else
 	pacman -S virtualbox-guest-utils
