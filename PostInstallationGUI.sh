@@ -123,6 +123,8 @@ echo '			SSH credentials file'
 echo '--------------------------------------------------------------------------------------------'
 
 
+mkdir /etc/samba
+mkdir /etc/samba/credentials
 echo "username=myuser" > /etc/samba/credentials/share
 echo "password=mypass" >> /etc/samba/credentials/share
 printf '\n'

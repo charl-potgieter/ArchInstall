@@ -81,12 +81,6 @@ https://news.ycombinator.com/item?id=11070797
 - Copy SSH key  into github
 
 
-
-
-
-
-
-
 Clone from github into a bare repo (cloning automatically creates a remote called origin)
 	git clone --bare git@github.com:charl-potgieter/dotfiles.git $HOME/.dotfiles.git
 
