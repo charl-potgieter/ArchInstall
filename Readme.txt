@@ -53,39 +53,39 @@ Post Install GUI
 
 - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
 	./PostInstall.sh 2>&1 | tee postoutput
+	
+- Create a samba credentials file /etc/samba/credentials/share
+	
+- reboot and login as non-root user
+ 
 
 
 
 
-
-
-
-SSH Keys
------------------
-
-Do I need to generate ssh keys on server?
-
-Generate ssh keys:
-$ ssh-keygen
-
-
-Add PUBLIC key to my github account via copy and paste (SSH into virtual box if this is a virtual install to enable copy)
-Easier to copy from less in virtualbox (if logged in via git bash).   Another option is to copy into a shared folder.
 
 
 Clone existing github dotfiles into a bare repository
 -------------------------------------------------------
 
-Ensure that machine has been restarted and I am now logged in as user not root
-
 Inspiration from below links:
 https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 https://news.ycombinator.com/item?id=11070797
 
-Remove any existing dotfiles from $HOME which were automatically created  on system install e.g. .bashrc
+- Remove any existing dotfiles from $HOME which were automatically created  on system install e.g. .bashrc
 (DONT type rm .* as this has potential to delete everything in $HOME)
 
-(No need to create a .gitignore as I have one in the below github repository)
+- Log in as non-root user
+
+- Generate SSH key with ssh-keygen
+
+- Copy SSH key  into github
+
+
+
+
+
+
+
 
 Clone from github into a bare repo (cloning automatically creates a remote called origin)
 	git clone --bare git@github.com:charl-potgieter/dotfiles.git $HOME/.dotfiles.git

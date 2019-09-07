@@ -82,15 +82,6 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Generate SSH keys'
-echo '--------------------------------------------------------------------------------------------'
-
-ssh-keygen
-printf '\n\n\n'
-
-
-
-echo '--------------------------------------------------------------------------------------------'
 echo '			Make directories for mounting samba shares'
 echo '--------------------------------------------------------------------------------------------'
 
@@ -124,3 +115,25 @@ chown charl:charl /home/$MYUSERNAME/ZZZ_Backup_Cloud_Drives
 chown charl:charl /home/$MYUSERNAME/ZZZ_Backup_USB_ServerOS
 chown charl:charl /home/$MYUSERNAME/ZZZ_BackupMirrorOvernight
 chown charl:charl /home/$MYUSERNAME/ZZZ_BackupSnapshots
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			SSH credentials file'
+echo '--------------------------------------------------------------------------------------------'
+
+
+echo "username=myuser" > /etc/samba/credentials/share
+echo "password=mypass" >> /etc/samba/credentials/share
+printf '\n'
+
+read -p "Press enter to edit credentials file... "
+vim /etc/samba/credentials/share
+printf '\n'
+
+# Set credential file ownership and permissions
+chown root:root /etc/samba/credentials
+chmod 700 /etc/samba/credentials
+chmod 600 /etc/samba/credentials/share
+
+
