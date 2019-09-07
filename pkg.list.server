@@ -1,11 +1,10 @@
 aws-cli
+dhcpcd
 exiv2
-git
 gzip
 handbrake-cli
 imagemagick
 ipython
-jupyter-notebook
 openssh
 parted
 python
@@ -20,4 +19,3 @@ unzip
 vim
 vim-jedi
 youtube-dl
-virtualbox-guest-utils-nox

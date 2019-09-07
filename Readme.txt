@@ -38,20 +38,24 @@ Run ArchInstall.sh
  - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
 	./installscript.sh 2>&1 | tee output
 - Don't use underscore in hostname - have experienced issues with this
+
+
+
+
+Post Install GUI
+-----------------
 - Shutdown virtual machine, remove disc and reboot.
-- ***** NB above step!!!! **** Forgetting to do this will attempt next install steps on install image!
+ ***** NB above step!!!! **** Forgetting to do this will attempt next install steps on install image!
 
+- curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/PostInstallationGUI.sh > PostInstall.sh
 
-
-After reboot
--------------
-
+- chmod 755 above file
 
 - run using below to direct stdout and stderr to outfile to review as messages quickly scroll of screen
-	./postinstall.sh 2>&1 | tee postoutput
+	./PostInstall.sh 2>&1 | tee postoutput
 
 
-During post-install of virtualbox package guest utils ensure that virtualbox-host-modules-arch is selected(see Arch Wiki)
+
 
 
 

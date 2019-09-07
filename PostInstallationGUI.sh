@@ -1,4 +1,4 @@
-# RUN AS SUDO
+#!/bin/bash
 
 
 
@@ -20,6 +20,7 @@ pacman -S --needed - < /pkg.list.temp
 rm /pkg.list.temp
 
 printf '\n\n\n'
+
 
 
 
@@ -51,32 +52,33 @@ passwd $MYUSERNAME
 printf '\n\n\n'
 
 
-echo '--------------------------------------------------------------------------------------------'
-echo '			Remove existing dot files'
-echo '--------------------------------------------------------------------------------------------'
-
-rm -r $HOME/.*
-rm $HOME/.*
 
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Mount dropbox shared folder and use symlink to home folder'
+echo '			Mount shared folder named Config_Files_GUI and copy config files'
 echo '--------------------------------------------------------------------------------------------'
 
 printf '\n'
-echo 'Ensure a virtualbox shared folder named Dropbox is set up.'
-echo 'Ensure auto-mount is ticked'
+echo 'Ensure a virtualbox shared folder named Config_Files_GUI is set up for'
+echo 'copying across relevant configuration files not stored in Github repo.'
 read -p "Press enter to continue... "
 
-# add user to vboxsf group to enable access to shared folder
-gpasswd -a $MYUSERNAME vboxsf
-
-systemctl enable vboxservice.service
-systemctl start vboxservice.service
-ln -s /media/sf_Dropbox /home/$MYUSERNAME/Dropbox
+mount -t vboxsf -o gid=vboxsf Config_Files_GUI /mnt
+cat /mnt/fstab >> /etc/fstab
+umount /mnt
 
 printf '\n\n\n'
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Refresh fstab'
+echo '--------------------------------------------------------------------------------------------'
+
+mount -a
+printf '\n\n\n'
+
+
 
 
 echo '--------------------------------------------------------------------------------------------'
@@ -84,7 +86,7 @@ echo '			Generate SSH keys'
 echo '--------------------------------------------------------------------------------------------'
 
 ssh-keygen
-
+printf '\n\n\n'
 
 
 
@@ -100,3 +102,25 @@ mkdir /home/$MYUSERNAME/Pictures
 mkdir /home/$MYUSERNAME/HomeVideos
 mkdir /home/$MYUSERNAME/Videos
 mkdir /home/$MYUSERNAME/Music
+mkdir /home/$MYUSERNAME/ZZZ_Backup_Cloud_Drives
+mkdir /home/$MYUSERNAME/ZZZ_Backup_USB_ServerOS
+mkdir /home/$MYUSERNAME/ZZZ_BackupMirrorOvernight
+mkdir /home/$MYUSERNAME/ZZZ_BackupSnapshots
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Change ownership of above directories'
+echo '--------------------------------------------------------------------------------------------'
+
+chown charl:charl /home/$MYUSERNAME/Documents_Charl
+chown charl:charl /home/$MYUSERNAME/Documents_Kerrie
+chown charl:charl /home/$MYUSERNAME/Documents_Dylan
+chown charl:charl /home/$MYUSERNAME/Documents_Jared
+chown charl:charl /home/$MYUSERNAME/Pictures
+chown charl:charl /home/$MYUSERNAME/HomeVideos
+chown charl:charl /home/$MYUSERNAME/Videos
+chown charl:charl /home/$MYUSERNAME/Music
+chown charl:charl /home/$MYUSERNAME/ZZZ_Backup_Cloud_Drives
+chown charl:charl /home/$MYUSERNAME/ZZZ_Backup_USB_ServerOS
+chown charl:charl /home/$MYUSERNAME/ZZZ_BackupMirrorOvernight
+chown charl:charl /home/$MYUSERNAME/ZZZ_BackupSnapshots

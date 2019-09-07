@@ -124,6 +124,13 @@ systemctl enable dhcpcd@$INTERFACE.service
 printf '\n\n\n'
 
 
+echo '--------------------------------------------------------------------------------------------'
+echo '			Systems upgrade prior to program installation'
+echo '--------------------------------------------------------------------------------------------'
+
+pacman -Syu
+printf '\n\n\n'
+
 
 echo '--------------------------------------------------------------------------------------------'
 echo '			Install and configure GRUB'
@@ -138,31 +145,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 printf '\n\n\n'
 
-
-
-
-echo '--------------------------------------------------------------------------------------------'
-echo '			Setup git'
-echo '--------------------------------------------------------------------------------------------'
-
-read -p "Enter git name : " GITNAME
-read -p "Enter git email address : " GITEMAIL
-
-git config --global user.name  "$GITNAME"
-git config --global user.email "$GITEMAIL"
-
-printf '\n\n\n'
-
-
-
-
-echo '--------------------------------------------------------------------------------------------'
-echo '			Install git crypt'
-echo '--------------------------------------------------------------------------------------------'
-
-
-pacman -S git-crypt
-printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
@@ -181,11 +163,21 @@ fi
 printf '\n\n\n'
 
 
+echo '--------------------------------------------------------------------------------------------'
+echo '			Setup git'
+echo '--------------------------------------------------------------------------------------------'
+printf '\n'
+
+read -p "Enter git name : " GITNAME
+read -p "Enter git email address : " GITEMAIL
+
+git config --global user.name  "$GITNAME"
+git config --global user.email "$GITEMAIL"
+
+printf '\n\n\n'
 
 
-
-
-
+	
 
 
 echo '--------------------------------------------------------------------------------------------'
