@@ -1,0 +1,14 @@
+# Server operating system
+PARTLABEL=os		   /               		ext4	rw,relatime,data=ordered        0 1
+
+# Server backup onto usb
+PARTLABEL=osbackup		/mnt/backups/usb_server_os	ext4	rw,relatime,data=ordered        0 1
+
+# Main data drive for serving up via samba
+PARTLABEL=data			/srv/samba			ext4	rw,relatime,data=ordered	0 2
+
+# Mirrored data backup drive
+PARTLABEL=mirror 	/mnt/backups/mirror_overnight	ext4	rw,relatime,data=ordered	0 2
+
+# Snapshot backup drive
+PARTLABEL=snapshot	/mnt/backups/snapshots		ext4	rw,relatime,data=ordered	0 2
