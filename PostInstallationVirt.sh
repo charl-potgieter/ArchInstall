@@ -10,7 +10,7 @@ printf '\n\n\n'
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Get and install server program list'
+echo '			Get and install virt program list'
 echo '--------------------------------------------------------------------------------------------'
 
 curl -L https://raw.githubusercontent.com/charl-potgieter/ArchInstall/master/pkg.list.virt > /pkg.list.temp
@@ -96,7 +96,7 @@ echo '--------------------------------------------------------------------------
 echo '			Disable ssh passwords'
 echo '--------------------------------------------------------------------------------------------'
 
-echo 'set PasswordAuthentication no in sshd_config'
+echo 'set PasswordAuthentication no in sshd_config.  Key can be copied across from host in virtual machine using a shared folder'
 read -p "Press enter to continue and make above change... "
 vim /etc/ssh/sshd_config
 
@@ -111,3 +111,14 @@ echo '--------------------------------------------------------------------------
 
 systemctl enable sshd.service
 systemctl start sshd.service
+
+
+
+echo '--------------------------------------------------------------------------------------------'
+echo '			Manual to do'
+echo '--------------------------------------------------------------------------------------------'
+
+echo '(1) SSH into the virtual machine'
+echo '(2) Edit /etc/fstab and copy in the network mount details'
+read -p "Press enter to continue and make above change... "
+
