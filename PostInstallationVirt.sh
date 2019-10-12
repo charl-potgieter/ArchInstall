@@ -93,19 +93,6 @@ chown charl:charl /home/$MYUSERNAME/ZZZ_BackupSnapshots
 
 
 echo '--------------------------------------------------------------------------------------------'
-echo '			Disable ssh passwords'
-echo '--------------------------------------------------------------------------------------------'
-
-echo 'set PasswordAuthentication no in sshd_config.  Key can be copied across from host in virtual machine using a shared folder'
-read -p "Press enter to continue and make above change... "
-vim /etc/ssh/sshd_config
-
-printf '\n\n\n'
-
-
-
-
-echo '--------------------------------------------------------------------------------------------'
 echo '			Enable and start daemons'
 echo '--------------------------------------------------------------------------------------------'
 
@@ -119,6 +106,8 @@ echo '			Manual to do'
 echo '--------------------------------------------------------------------------------------------'
 
 echo '(1) SSH into the virtual machine'
-echo '(2) Edit /etc/fstab and copy in the network mount details'
+echo '(2) Copy across public key to the virtual machine'
+echo '(3) Disable SSH password authentication'
+echo '(4) Edit /etc/fstab and copy in the network mount details'
 read -p "Press enter to continue and make above change... "
 
